@@ -1,0 +1,10 @@
+<h1>Random Numbers</h1>
+{%for num in random_numbers%}
+    <p>{{num}}</p>
+{%endfor%}
+<h1>Student Info</h1>
+{%for student in students%}
+    <p>{{ student['name'] }} - {{ student['age'] }}</p>
+{%endfor%}
+
+

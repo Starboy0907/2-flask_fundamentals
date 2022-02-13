@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secondary Text</title>
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+</script>
+</head>
+<body>
+    <div class="flex justify-center col-6 mx-auto text-center" style='background-color:rgba(0,255,179,0.274)'>
+        <h1>Welcome the Great Number Game!!!<br>
+        <small>I am thinking of a number between 1 and 100</small></h1></div>
+        <form action="/guess" class="bg-dark text-warning text-center p-5 rounded" method="post">
+            <div class="mb-3 mt-3">
+                <input type="text" name="guess" class="form-control" id="guess" placeholder="Take a Guess!!!" name="guess">
+            </div>
+            <button type="submit" class="btn btn-warning">Guess</button>
+        </form>
+        {% if 'guess' in session: %}
+            
+            {% if session['guess'] == session['number'] %}
+            <div class="container mt-3">
+                <div class="mt-4 p-5 bg-success text-primary text-white text-center rounded">
+                    <h1>You Guessed It!!!</h1>
+                    <a href="/reset" class="btn btn-primary">Play Again</a>
+                </div>
+            </div>
+            {% elif session['guess'] < session['number'] %}
+            <div class="container mt-3">
+                <div class="mt-4 p-5 bg-danger text-primary text-white text-center rounded">
+                    <h1>Too Low!!!</h1>
+                </div>
+            </div>
+            {% else %}
+            <div class="container mt-3"></div>
+                <div class="mt-4 p-5 bg-success text-primary text-white text-center rounded">
+                    <h1>Too High!!!</h1>
+                </div>
+            </div>    
+            </body>
+            </body>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>        
+</body>
+</html>

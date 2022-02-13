@@ -1,0 +1,47 @@
+Routes
+Objectives:
+Understand the importance of routes in web development
+Understand the different parts of a route
+Identify how and when to use GET requests
+
+Deliverables: 1)You can pass variables into the route: 
+    @app.route('/<username>/<int:id>')
+    def user(username, id):
+        print(f'(Welcome {username}you passcode {id})')
+
+Routes are an essential part of any web application. A route is much like a variable name we assign to a request. The job of a route is to communicate to the server what kind of information the client needs. This route name is attached to a route on our server that points towards a specific set of instructions. These instructions contain information about how to interpret the data being sent, the operations that need to be completed, and the response that should be sent back. These instructions are the code we'll be creating!
+
+Every route has two parts:
+
+HTTP method (GET, POST, PUT, PATCH, DELETE)
+URL
+Setting up your Routes
+Let's add another route to our server.py file:
+
+# import statements, maybe some other routes
+    
+@app.route('/success')
+def success():
+  return "success"
+    
+    # app.run(debug=True) should be the very last statement! 
+copy
+Now we have 2 routes--if the client requests localhost:5000/, the hello_world function will run. But if the client requests localhost:5000/success, the success function will run.
+
+What if we wanted to be able to say "Hello, Michael" or "Hello, Amy" or "Hello, Wes"? We could make three routes, but that feels pretty repetitive. Also, every time we want to include someone else, we would need to create a new route. This is a great opportunity to add variable rules to our routes. For the example above, we could make the name a variable, like so:
+
+@app.route('/hello/<name>') # for a route '/hello/____' anything after '/hello/' gets passed as a variable 'name'
+def hello(name):
+    print(name)
+    return "Hello, " + name
+We can add as many of these as we need, giving each variable a different name:
+
+@app.route('/users/<username>/<id>') # for a route '/users/____/____', two parameters in the url get passed as username and id
+def show_user_profile(username, id):
+    print(username)
+    print(id)
+    return "username: " + username + ", id: " + id
+
+The localhost:5000 part of the route determines which server to call upon. The rest of the route, including the "/", tells the server which function should be invoked.
+
+Although the code we show above is brief, we're bringing together a lot of concepts you've never seen before. Test out all the code snippets we've given you to this point to make sure you understand how everything's working. While it doesn't do much, you've created your first web application! The next assignment will help you practice these concepts. If you're having trouble piecing everything together, watch the video below to see all this code in action.

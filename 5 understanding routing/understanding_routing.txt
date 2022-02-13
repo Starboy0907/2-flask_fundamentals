@@ -1,0 +1,32 @@
+from flask import Flask  #1 Import Flask allows us to create our app(note: upper and lower case)
+app = Flask(__name__) #2 Create a new instance of Flask called app(app is variable name we'll use for routing)
+@app.route('/') #3 The @ decorator associates this route with the function directly following- this is the index page
+def hello_world(): 
+    return 'Hello World!' #4 Return the string hello world as a response
+
+@app.route('/dojo')
+def success():
+    return "Dojo!"
+
+@app.route('/<string:name>/<int:num>')
+def hello(name,num):
+    print(name ,num)
+    return f"Hello   " +  (name  *  num)
+
+@app.route('/say/<string:name>')
+def say(name):
+    return f"Hi " + (name)
+
+@app.route('/users/<username>/<id>')
+def show_user_profile(username, id):
+    print(username)
+    print(id)
+    return "username: " + username + ", id: " + id
+
+@app.route('/repeat/<int:num>/<string:banana>')
+def repeat(num, banana):
+    print(num, banana)
+    return(num * banana)
+
+if __name__=="__main__": #5 Ensures this file is being run directly and not from a different module
+    app.run(debug=True) #6 Run the app in debug mode

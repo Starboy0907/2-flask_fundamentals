@@ -1,0 +1,61 @@
+# Deliverables 1) Installing the virtual environment with: pip install pipenv (Windows) or pip3 install pipenv (Mac)
+               2) Installing flask in the project folder with: pip install flask
+               3) Activating our Virtual Environment with: pipenv shell 
+               4) Deactivating our Virtual Environment with exit
+               
+
+Virtual Environments
+Objectives:
+
+Understand what virtual environments are and how they are useful
+Set up a virtual environment
+Know how to use a virtual environment
+When we are working as a developer, we might find ourselves working on different projects or teams in our work place.  These projects might use the same programming language, but different versions and packages along the way.  How do we keep ourselves organized and avoid conflicts with our OS?  With Python the answer if Virtual Environments.
+
+Installing our Virtual Environment tool
+While there are a couple different ways to create virtual environments, we are going to be using pipenv to stream line the process.  To get started we need to use pip to install pipenv globally.
+
+Windows:
+
+pip install pipenvcopy
+Mac:
+
+pip3 install pipenv
+Creating our Virtual Environment and Installing Flask
+Now that we have pipenv installed, let's create a new project folder.  Using the folder structure we created on day one, create a new folder inside the python_/flask/fundamentals folder called hello_flask.
+
+Navigate into the hello_flask folder using your terminal or command prompt.  Once we are in the project folder we can use pipenv to install Flask. 
+
+pipenv install flask
+
+
+
+The first time we run pipenv install, it will create 2 files for us, Pipfile and Pipfile.lock.  Both are needed in order to use the installed packages, but difference between the two include: Pipfile will display the packages installed, and Pipfile.lock will have the specific details on what version is being used.
+
+***NOTE*** If your receive an error using pipenv, you may need to import it as a module first before it can be ran as a script.  You can do so using the -m flag as below.  You will need to do this every time you use pipenv.
+
+Windows:
+
+python -m pipenv <command to use>
+Mac:
+
+python3 -m pipenv <command to use>
+Activating our Virtual Environment
+Once we have installed the Flask package, we need to activate our environment in order to use it.  We can achieve this with the following command.
+
+pipenv shellcopy
+
+
+
+Notice the additional folder with the parentheses, (hello_flask), this is showing us the environment is active.
+
+Deactivating our Virtual Environment
+To deactivate the virtual environment we can use exit.  Our bash window should look something like this.
+
+exit
+
+
+
+IMPORTANT DISCLAIMER
+Do not create a virtual environment with another virtual environment.  
+

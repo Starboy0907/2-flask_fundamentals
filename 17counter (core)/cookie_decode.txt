@@ -1,0 +1,11 @@
+Microsoft Windows [Version 10.0.22000.376]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Program0907>python
+Python 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import base64
+>>> base64.urlsafe_b64decode('{'eyJjb3VudCI6MX0===')
+>>> base64.urlsafe_b64decode('eyJjb3VudCI6MX0===')
+b'{"count":1}'
+>>>

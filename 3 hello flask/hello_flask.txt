@@ -1,0 +1,44 @@
+Deliverables: 1) Hello_World Flask application
+              2) You can run the flask application with: python server.py
+              
+Hello, Flask!
+Objectives:
+Build your first web server with Flask
+Let's start by building a basic "hello world" app in Flask:
+
+Inside the "hello_flask" folder, create a file called server.py
+This will be our "server" file where we will set up all of our routes to handle requests.
+You'll want to create a new folder for each assignment moving forward. It will seem tedious at first, but as we add additional files to each project, we'll want to keep everything organized by assignment/project!
+Finally, put the following code inside of server.py:
+from flask import Flask  # Import Flask to allow us to create our app
+app = Flask(__name__)    # Create a new instance of the Flask class called "app"
+@app.route('/')          # The "@" decorator associates this route with the function immediately following
+def hello_world():
+    return 'Hello World!'  # Return the string 'Hello World!' as a response
+if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
+    app.run(debug=True)    # Run the app in debug mode.
+copy
+Notice how we are accessing the app object and running the route method, passing in a string that is the route that we want to add to our application. You must do this for every route that you want to add to our application.
+
+Note: Moving forward, you may see some red squiggly lines under your import statements because your text editor's linter doesn't recognize packages in your virtual environment. You can ignore them unless running the file actually gives you errors!
+
+
+Now run the application by navigating to your project directory and running the following command. Be sure the virtual environment is activated.
+
+(hello_flask) hello_flask $ python server.py
+copy
+Now if you navigate to localhost:5000/ in your browser, you should see the message "Hello World!"
+
+You just created your first web server!
+
+Why are we going to localhost:5000? The Flask web server you created listens for an HTTP request on port 5000 (notice in your terminal that your code is constantly running). Whenever a request is sent to localhost:5000, the server looks at the URL being requested and sends the appropriate response. If we go to route "/", the hello_world() function will run. Since we (or the client) called the function, we receive what the function returns!
+
+We also did a couple of important things in the code above:
+
+We imported the Flask class. You will need this line in every application you build with Flask.
+We made an instance of the Flask class called "app". You will need this line in every application you build with Flask.
+We set up a routing rule using the "@" decorator with the route method: @app.route("/route_string"). The routing rule is associated with the function immediately following it.
+Finally, we ran the app! This takes all of our routing rules that we set up and actually starts up the server.
+
+
+Previous

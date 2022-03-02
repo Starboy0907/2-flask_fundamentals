@@ -1,8 +1,9 @@
-from flask import Flask, render_template
-
-
+from flask import Flask, redirect, render_template
 app = Flask(__name__)
 
+@app.route('/')
+def reroute():
+    return redirect('/play')
 
 @app.route('/play')
 def level_one():

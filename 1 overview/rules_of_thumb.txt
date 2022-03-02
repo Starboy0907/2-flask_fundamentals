@@ -1,0 +1,10 @@
+1) When you have a GET request, render_template
+2) When you have a POST request, redirect
+3) On the POST route, the action method is singular = method; the method in server is plural = methods
+4) Whatever you name the input is how you access it.
+5) Requesbe accessed on the next paget.form is an immutable, multi-value dictionary and you can accesss it like a dictionary:
+    print(request.form['first_name'])
+6) GET REQUEST, POST REQUEST, GET REQUEST- Get the order page, you post the order, you get results
+7) Without session, all the form data gets dumped upon redirect.
+8) Whenever you have session, you need a secret key
+9) Whenevr you need to store something, you can store it into session and it can 

@@ -7,7 +7,10 @@ Identify how and when to use GET requests
 Deliverables: 1)You can pass variables into the route: 
     @app.route('/<username>/<int:id>')
     def user(username, id):
-        print(f'(Welcome {username}you passcode {id})')
+       a = (f'(Welcome {username}you passcode {id})')
+       return a
+    user()
+
 
 Routes are an essential part of any web application. A route is much like a variable name we assign to a request. The job of a route is to communicate to the server what kind of information the client needs. This route name is attached to a route on our server that points towards a specific set of instructions. These instructions contain information about how to interpret the data being sent, the operations that need to be completed, and the response that should be sent back. These instructions are the code we'll be creating!
 

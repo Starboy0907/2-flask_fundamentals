@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Index</h1>
+    <p class="important">
+    Welcome on my awesome homepage.
+{% endblock %}
+
+<p>First Name:{{request.form.first_name}}</p>
+<p>Last Name:{{request.form.last_name}}</p>
+<p>Name: {{request.form.pet_name}}</p>

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Index</h1>
+    <p class="important">
+    <h1>Here are some users!</h1>
+    <ul>    
+        {% for each in users %}
+            {% if each.first_name == "Bart" %}
+                <p>Eat my Shorts!</p>   
+            {% else %}
+                <li>{{each.first_name}} {{each['last_name']}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    Welcome on my awesome homepage.
+{% endblock %}

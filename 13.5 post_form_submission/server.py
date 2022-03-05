@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template,redirect, request, session
 app = Flask(__name__)
-app.secret_key = "key_glock"
+app_key = "Snufalufagas"
 
 @app.route('/')
 def form():
@@ -15,10 +15,14 @@ def form_test():
     session['email'] = request.form['email']
     return redirect('/show')
 
+    #adding this method
+# @app.route("/show")
+# def show_user():
+#     return render_template('show.html', fname_on_template=session['first_name'],lname_on_template=session['last_name'], email_on_template=session['email'])
+
 @app.route('/show')
-def show():
-    return render_template('show.html')  
-# Never render a template on a POST request
-#Instead we will redirect to our index route
-if __name__=="__main__":
+def show_user():
+    return render_template('show.html')
+
+if __name__ == "__main__":
     app.run(debug=True)
